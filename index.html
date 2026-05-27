@@ -1,0 +1,1568 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>TEAM LMC ™ | Comunidad Gamer & Minecraft</title>
+
+<link rel="preconnect" href="https://cdn.discordapp.com/attachments/1067177350959210537/1509137688153030776/BLOGOLMC2.png?ex=6a18157f&is=6a16c3ff&hm=ad0022bd059cc3e53ae8bc7598dcb03fe1ef982dbe7417846735ffdcfad4d005&">
+<link href="https://cdn.discordapp.com/attachments/1067177350959210537/1509137688153030776/BLOGOLMC2.png?ex=6a18157f&is=6a16c3ff&hm=ad0022bd059cc3e53ae8bc7598dcb03fe1ef982dbe7417846735ffdcfad4d005&/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+:root{
+--bg:#050505;
+--card:rgba(255,255,255,.05);
+--red:#ff1e1e;
+--red2:#a00000;
+--white:#ffffff;
+--gray:#aaaaaa;
+--glass:rgba(255,255,255,.07);
+--border:rgba(255,255,255,.1);
+--shadow:0 0 40px rgba(255,0,0,.25);
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:
+radial-gradient(circle at top,#300000 0%,#050505 40%),
+#050505;
+color:white;
+overflow-x:hidden;
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar{
+width:10px;
+}
+
+::-webkit-scrollbar-track{
+background:#0a0a0a;
+}
+
+::-webkit-scrollbar-thumb{
+background:linear-gradient(to bottom,#ff0000,#600000);
+border-radius:10px;
+}
+
+/* PARTICLES */
+
+.particles{
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+pointer-events:none;
+z-index:-1;
+overflow:hidden;
+}
+
+.particle{
+position:absolute;
+width:2px;
+height:2px;
+background:red;
+border-radius:50%;
+opacity:.4;
+animation:float 10s linear infinite;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh) scale(0);
+}
+100%{
+transform:translateY(-10vh) scale(1);
+}
+}
+
+/* NAVBAR */
+
+nav{
+position:fixed;
+top:20px;
+left:50%;
+transform:translateX(-50%);
+width:90%;
+max-width:1300px;
+padding:15px 30px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,.5);
+backdrop-filter:blur(20px);
+border:1px solid rgba(255,255,255,.08);
+border-radius:20px;
+z-index:999;
+box-shadow:var(--shadow);
+}
+
+nav h1{
+font-size:1.4rem;
+font-weight:800;
+letter-spacing:2px;
+}
+
+nav ul{
+display:flex;
+gap:25px;
+list-style:none;
+}
+
+nav a{
+text-decoration:none;
+color:white;
+font-weight:600;
+transition:.3s;
+}
+
+nav a:hover{
+color:var(--red);
+}
+
+/* HERO */
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:0 20px;
+position:relative;
+overflow:hidden;
+}
+
+.hero::before{
+content:"";
+position:absolute;
+width:800px;
+height:800px;
+background:radial-gradient(circle,rgba(255,0,0,.35),transparent 70%);
+filter:blur(80px);
+z-index:-1;
+animation:pulse 5s infinite;
+}
+
+@keyframes pulse{
+0%,100%{
+transform:scale(1);
+opacity:.8;
+}
+50%{
+transform:scale(1.2);
+opacity:1;
+}
+}
+
+.hero-content{
+max-width:700px;
+}
+
+.hero-logo{
+width:400px;
+margin-bottom:25px;
+filter:drop-shadow(0 0 30px red);
+}
+
+.hero h1{
+font-size:6rem;
+font-weight:900;
+line-height:1;
+margin-bottom:20px;
+text-shadow:0 0 30px rgba(255,0,0,.6);
+}
+
+.hero h2{
+font-size:1.8rem;
+margin-bottom:20px;
+color:#ff4d4d;
+}
+
+.hero p{
+font-size:1.2rem;
+color:#ccc;
+line-height:1.8;
+margin-bottom:40px;
+}
+
+.socials{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.socials a{
+width:60px;
+height:60px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);
+font-size:1.3rem;
+color:white;
+transition:.4s;
+backdrop-filter:blur(10px);
+}
+
+.socials a:hover{
+transform:translateY(-8px) scale(1.1);
+background:rgba(255,0,0,.15);
+box-shadow:0 0 25px rgba(255,0,0,.7);
+}
+
+/* SECTIONS */
+
+section{
+padding:120px 8%;
+position:relative;
+}
+
+.section-title{
+font-size:3rem;
+font-weight:900;
+margin-bottom:60px;
+text-align:center;
+text-transform:uppercase;
+letter-spacing:3px;
+}
+
+.section-title span{
+color:var(--red);
+}
+
+/* GLASS CARD */
+
+.glass{
+background:var(--glass);
+backdrop-filter:blur(20px);
+border:1px solid var(--border);
+border-radius:25px;
+padding:40px;
+box-shadow:var(--shadow);
+}
+
+/* ABOUT */
+
+.about p{
+line-height:2;
+color:#ccc;
+font-size:1.05rem;
+}
+
+.management{
+margin-top:40px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.management div{
+background:rgba(255,255,255,.04);
+padding:20px;
+border-radius:18px;
+text-align:center;
+border:1px solid rgba(255,255,255,.05);
+}
+
+/* ROSTER */
+
+.roster-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+}
+
+.member-card{
+position:relative;
+overflow:hidden;
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);
+border-radius:25px;
+padding:30px;
+text-align:center;
+transition:.4s;
+backdrop-filter:blur(18px);
+cursor:pointer;
+}
+
+.member-card:hover{
+transform:translateY(-10px) scale(1.03);
+box-shadow:0 0 35px rgba(255,0,0,.4);
+border-color:red;
+}
+
+.member-card::before{
+content:"";
+position:absolute;
+top:-50%;
+left:-50%;
+width:200%;
+height:200%;
+background:linear-gradient(
+45deg,
+transparent,
+rgba(255,0,0,.25),
+transparent
+);
+transform:rotate(25deg);
+animation:shine 5s linear infinite;
+}
+
+@keyframes shine{
+0%{
+transform:translateX(-100%) rotate(25deg);
+}
+100%{
+transform:translateX(100%) rotate(25deg);
+}
+}
+
+.member-card img{
+width:120px;
+height:120px;
+border-radius:50%;
+object-fit:cover;
+border:4px solid rgba(255,0,0,.5);
+margin-bottom:20px;
+box-shadow:0 0 25px rgba(255,0,0,.5);
+}
+
+.member-card h3{
+font-size:1.5rem;
+margin-bottom:10px;
+}
+
+.role{
+color:#ff3b3b;
+font-weight:700;
+margin-bottom:15px;
+}
+
+.member-card p{
+color:#bbb;
+line-height:1.7;
+font-size:.95rem;
+margin-bottom:20px;
+}
+
+.member-btn{
+display:inline-flex;
+align-items:center;
+gap:10px;
+padding:12px 20px;
+border-radius:12px;
+background:linear-gradient(45deg,#ff0000,#700000);
+color:white;
+text-decoration:none;
+font-weight:700;
+transition:.3s;
+}
+
+.member-btn:hover{
+transform:scale(1.05);
+}
+
+/* VIDEOS */
+
+.video-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+gap:30px;
+}
+
+.video-card{
+overflow:hidden;
+border-radius:25px;
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);
+box-shadow:var(--shadow);
+transition:.4s;
+}
+
+.video-card:hover{
+transform:translateY(-10px);
+}
+
+.video-card iframe{
+width:100%;
+height:250px;
+border:none;
+}
+
+/* SERVICES */
+
+.services-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.service-card{
+padding:35px;
+border-radius:22px;
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);
+transition:.4s;
+backdrop-filter:blur(20px);
+}
+
+.service-card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 30px rgba(255,0,0,.35);
+}
+
+.service-card i{
+font-size:2rem;
+margin-bottom:20px;
+color:red;
+}
+
+.service-card h3{
+margin-bottom:15px;
+}
+
+/* PROJECTS */
+
+.projects-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.project-card{
+position:relative;
+overflow:hidden;
+padding:30px;
+border-radius:25px;
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);
+transition:.4s;
+backdrop-filter:blur(20px);
+}
+
+.project-card:hover{
+transform:translateY(-10px) scale(1.02);
+box-shadow:0 0 35px rgba(255,0,0,.45);
+}
+
+.project-card img{
+width:100%;
+height:140px;
+object-fit:cover;
+border-radius:15px;
+margin-bottom:20px;
+}
+
+/* SPONSORS */
+
+.sponsors{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.sponsor-card{
+padding:40px;
+border-radius:25px;
+text-align:center;
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);
+transition:.4s;
+}
+
+.sponsor-card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 35px rgba(255,0,0,.35);
+}
+
+/* JOIN */
+
+.join-box{
+text-align:center;
+}
+
+.join-box p{
+line-height:2;
+color:#ccc;
+margin-bottom:35px;
+}
+
+.requirements{
+margin:40px 0;
+padding:30px;
+border-radius:20px;
+background:rgba(255,255,255,.04);
+border:1px solid rgba(255,255,255,.08);
+text-align:left;
+}
+
+.requirements li{
+margin:15px 0;
+color:#ddd;
+}
+
+.join-btn{
+display:inline-block;
+padding:18px 40px;
+border-radius:18px;
+background:linear-gradient(45deg,#ff0000,#600000);
+color:white;
+text-decoration:none;
+font-weight:800;
+font-size:1rem;
+box-shadow:0 0 30px rgba(255,0,0,.5);
+transition:.4s;
+}
+
+.join-btn:hover{
+transform:scale(1.05);
+}
+
+/* ACCORDION */
+
+.accordion{
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+.accordion-item{
+background:rgba(255,255,255,.05);
+border-radius:20px;
+overflow:hidden;
+border:1px solid rgba(255,255,255,.08);
+}
+
+.accordion-header{
+padding:25px;
+cursor:pointer;
+font-weight:700;
+background:rgba(255,255,255,.03);
+}
+
+.accordion-content{
+max-height:0;
+overflow:hidden;
+transition:max-height .4s ease;
+padding:0 25px;
+color:#ccc;
+line-height:2;
+}
+
+.accordion-item.active .accordion-content{
+max-height:500px;
+padding:25px;
+}
+
+/* FOOTER */
+
+footer{
+padding:70px 20px;
+text-align:center;
+background:#020202;
+border-top:1px solid rgba(255,255,255,.08);
+}
+
+footer h2{
+font-size:2rem;
+margin-bottom:15px;
+}
+
+footer p{
+color:#888;
+}
+
+/* BACK TO TOP */
+
+.top-btn{
+position:fixed;
+bottom:25px;
+right:25px;
+width:55px;
+height:55px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+background:linear-gradient(45deg,#ff0000,#600000);
+color:white;
+font-size:1.2rem;
+cursor:pointer;
+box-shadow:0 0 25px rgba(255,0,0,.5);
+z-index:999;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+.hero h1{
+font-size:4rem;
+}
+
+nav ul{
+display:none;
+}
+
+}
+
+@media(max-width:800px){
+
+.hero h1{
+font-size:3rem;
+}
+
+.section-title{
+font-size:2rem;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="particles"></div>
+
+<!-- NAVBAR -->
+
+<nav>
+<h1>TEAM LMC ™</h1>
+
+<ul>
+<li><a href="#about">Nosotros</a></li>
+<li><a href="#members">Integrantes</a></li>
+<li><a href="#videos">Contenido</a></li>
+<li><a href="#studios">LMC Studios</a></li>
+<li><a href="#projects">Proyectos</a></li>
+<li><a href="#join">Unirse</a></li>
+</ul>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<img src="assets/avatars/teamlmc.png"
+class="hero-logo">
+
+<h1></h1>
+
+<h2>Comunidad Gamer & Minecraft</h2>
+
+<p>
+Uniendo jugadores, creadores y desarrolladores bajo una misma comunidad.
+</p>
+
+<div class="socials">
+
+<a href="https://discord.gg/Ry5zk9WEhN" target="_blank">
+<i class="fab fa-discord"></i>
+</a>
+
+<a href="https://youtube.com/@TeamLMC-Oficial" target="_blank">
+<i class="fab fa-youtube"></i>
+</a>
+
+<a href="https://www.tiktok.com/@teamlmc" target="_blank">
+<i class="fab fa-tiktok"></i>
+</a>
+
+<a href="https://www.instagram.com/team_lmc_oficial" target="_blank">
+<i class="fab fa-instagram"></i>
+</a>
+
+<a href="https://x.com/team__lmc" target="_blank">
+<i class="fab fa-x-twitter"></i>
+</a>
+
+</div>
+
+</div>
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<h2 class="section-title">
+QUIÉNES <span>SOMOS</span>
+</h2>
+
+<div class="glass about">
+
+<p>
+TEAM LMC (Los Masacotes) es una comunidad de jugadores creada para reunir personas con distintos intereses y estilos dentro del mundo gamer.
+<br><br>
+El grupo está abierto a todo tipo de juegos y plataformas, fomentando un espacio donde todos puedan disfrutar, convivir y compartir su experiencia.
+<br><br>
+Nos caracterizamos por el respeto, la unión y el buen ambiente entre los integrantes. En LMC no se trata solo de competir, sino de formar una comunidad sólida donde cada jugador aporte su personalidad y se sienta parte del equipo.
+</p>
+
+<div class="management">
+
+<div>
+<h3>Zansumi</h3>
+<p>Management</p>
+</div>
+
+<div>
+<h3>zFrixz</h3>
+<p>Management</p>
+</div>
+
+<div>
+<h3>TheAndreusPR</h3>
+<p>Management</p>
+</div>
+
+<div>
+<h3>IwanMC</h3>
+<p>Management</p>
+</div>
+
+</div>
+
+<br><br>
+
+<h3 style="text-align:center;color:#ff2d2d;">
+TEAM LMC ™ 2026
+</h3>
+
+</div>
+</section>
+
+<!-- MEMBERS -->
+
+<section id="members">
+
+<h2 class="section-title">
+INTEGRANTES <span>OFICIALES</span>
+</h2>
+
+<div class="roster-grid">
+
+<!-- ZANSUMI -->
+
+<div class="member-card"
+onclick="window.open('https://www.youtube.com/@Zansumii')">
+
+<img src="assets/avatars/zansumi.png">
+
+<h3>Zansumi</h3>
+
+<div class="role">
+FOUNDER - Creador de contenido
+</div>
+
+<p>
+Fundador principal de TEAM LMC y creador de contenido.
+</p>
+
+<a class="member-btn">
+<i class="fab fa-youtube"></i>
+YouTube
+</a>
+
+</div>
+
+<!-- ZFRIXZ -->
+
+<div class="member-card"
+onclick="window.open('https://www.youtube.com/@zFRIXZ')">
+
+<img src="assets/avatars/zfrixz.png">
+
+<h3>zFrixz</h3>
+
+<div class="role">
+CO FOUNDER — Creador de contenido
+</div>
+
+<p>
+Co fundador de TEAM LMC y creador de contenido.
+</p>
+
+<a class="member-btn">
+<i class="fab fa-youtube"></i>
+YouTube
+</a>
+
+</div>
+
+<!-- ANDREUS -->
+
+<div class="member-card"
+onclick="window.open('https://kick.com/theandreuspr')">
+
+<img src="assets/avatars/andreus.png">
+
+<h3>TheAndreusPR</h3>
+
+<div class="role">
+CO OWNER - Creador de contenido
+</div>
+
+<p>
+Co owner de TEAM LMC y creador de contenido.
+</p>
+
+<a class="member-btn">
+<i class="fa-solid fa-play"></i>
+Kick
+</a>
+
+</div>
+
+<!-- IWAN -->
+
+<div class="member-card"
+onclick="window.open('https://www.twitch.tv/iwanmc')">
+
+<img src="assets/avatars/iwan.png">
+
+<h3>IwanMC</h3>
+
+<div class="role">
+CO OWNER - Creador de contenido
+</div>
+
+<p>
+Co owner y streamer oficial de TEAM LMC.
+</p>
+
+<a class="member-btn">
+<i class="fab fa-twitch"></i>
+Twitch
+</a>
+
+</div>
+
+<!-- ULIMAN276 -->
+
+<div class="member-card"
+onclick="window.open('https://www.youtube.com/@uliman2768')">
+
+<img src="assets/avatars/uliman.png">
+
+<h3>Uliman276</h3>
+
+<div class="role">
+Jugador Casual/Competitivo Valorant
+</div>
+
+<p>
+Jugador competitivo y casual dentro de la comunidad.
+</p>
+
+<a class="member-btn">
+<i class="fab fa-youtube"></i>
+YouTube
+</a>
+
+</div>
+
+<!-- OSHA -->
+
+<div class="member-card"
+onclick="window.open('https://www.youtube.com/@OshaX64')">
+
+<img src="assets/avatars/osha.png">
+
+<h3>Oshawott0M</h3>
+
+<div class="role">
+Jugador Casual
+</div>
+
+<p>
+Miembro casual de TEAM LMC y jugador activo de la comunidad.
+</p>
+
+<a class="member-btn">
+<i class="fab fa-youtube"></i>
+YouTube
+</a>
+
+</div>
+
+<!-- BY5K -->
+
+<div class="member-card"
+onclick="window.open('https://www.youtube.com/@by5k_895')">
+
+<img src="assets/avatars/byk.png">
+
+<h3>By5k</h3>
+
+<div class="role">
+Jugador Casual
+</div>
+
+<p>
+Jugador casual y miembro oficial de TEAM LMC.
+</p>
+
+<a class="member-btn">
+<i class="fab fa-youtube"></i>
+YouTube
+</a>
+
+</div>
+
+<!-- YOKIU -->
+
+<div class="member-card"
+onclick="window.open('https://www.youtube.com/channel/UCucwOsyjO7WWttZGpZMhpkQ')">
+
+<img src="assets/avatars/yokiu.png">
+
+<h3>Yokiu</h3>
+
+<div class="role">
+Jugador Casual
+</div>
+
+<p>
+Jugador casual dentro de la comunidad TEAM LMC.
+</p>
+
+<a class="member-btn">
+<i class="fab fa-youtube"></i>
+YouTube
+</a>
+
+</div>
+
+<!-- ADRZ -->
+
+<div class="member-card"
+onclick="window.open('https://www.tiktok.com/@adrz.lpz')">
+
+<img src="assets/avatars/adrz.png">
+
+<h3>Adrz</h3>
+
+<div class="role">
+Jugador Casual
+</div>
+
+<p>
+Miembro casual y participante activo de TEAM LMC.
+</p>
+
+<a class="member-btn">
+<i class="fab fa-tiktok"></i>
+TikTok
+</a>
+
+</div>
+
+<!-- HOLAQUEHACE -->
+
+<div class="member-card"
+onclick="window.open('https://www.youtube.com/@buenastardes7643')">
+
+<img src="assets/avatars/holaquehace.png">
+
+<h3>hola_qease201</h3>
+
+<div class="role">
+Jugador Casual
+</div>
+
+<p>
+Jugador casual y miembro oficial de la comunidad.
+</p>
+
+<a class="member-btn">
+<i class="fab fa-youtube"></i>
+YouTube
+</a>
+
+</div>
+
+<!-- SPRITII -->
+
+<div class="member-card"
+onclick="window.open('https://kick.com/Spritii')">
+
+<img src="assets/avatars/spritii.png">
+
+<h3>Spritii</h3>
+
+<div class="role">
+Creador de contenido
+</div>
+
+<p>
+Streamer y creador de contenido dentro de TEAM LMC.
+</p>
+
+<a class="member-btn">
+<i class="fa-solid fa-play"></i>
+Kick
+</a>
+
+</div>
+
+<!-- FER -->
+
+<div class="member-card"
+onclick="window.open('https://www.tiktok.com/@niko_lol5')">
+
+<img src="assets/avatars/fer.png">
+
+<h3>Fer</h3>
+
+<div class="role">
+Jugador Casual
+</div>
+
+<p>
+Jugador casual y miembro activo de la comunidad.
+</p>
+
+<a class="member-btn">
+<i class="fab fa-tiktok"></i>
+TikTok
+</a>
+
+</div>
+
+<!-- RAYZZ21 -->
+
+<div class="member-card"
+onclick="window.open('https://www.tiktok.com/@rayzz.21_')">
+
+<img src="assets/avatars/razz.png">
+
+<h3>RaYzZ21</h3>
+
+<div class="role">
+Jugador Casual
+</div>
+
+<p>
+Jugador casual y miembro oficial de TEAM LMC.
+</p>
+
+<a class="member-btn">
+<i class="fab fa-tiktok"></i>
+TikTok
+</a>
+
+</div>
+
+<!-- MAIKI -->
+
+<div class="member-card"
+onclick="window.open('https://www.youtube.com/@Maiki_juega')">
+
+<img src="assets/avatars/maiki.png">
+
+<h3>Maiki_juega</h3>
+
+<div class="role">
+Creador de contenido
+</div>
+
+<p>
+Creador de contenido y miembro oficial de TEAM LMC.
+</p>
+
+<a class="member-btn">
+<i class="fab fa-youtube"></i>
+YouTube
+</a>
+
+</div>
+
+</div>
+
+</section>
+<!-- VIDEOS -->
+
+<section id="videos">
+
+<h2 class="section-title">
+CONTENIDO <span>Y VIDEOS</span>
+</h2>
+
+<div class="video-grid">
+
+<div class="video-card">
+<iframe
+src="https://www.youtube.com/embed/FCIssvwC7Kk"
+allowfullscreen></iframe>
+</div>
+
+<div class="video-card">
+<iframe
+src="https://www.youtube.com/embed/FQqg_FZPP4Q"
+allowfullscreen></iframe>
+</div>
+
+<div class="video-card">
+<iframe
+src="https://www.youtube.com/embed/ehaIvwu6S5o"
+allowfullscreen></iframe>
+</div>
+
+</div>
+
+</section>
+
+<!-- LMC STUDIOS -->
+
+<section id="studios">
+
+<section class="hero">
+
+<div class="hero-content">
+
+<img src="assets/avatars/lmcstudios.png"
+class="hero-logo">
+
+
+<div class="glass">
+
+<p style="line-height:2;color:#ccc;">
+LMC Studios es la división especializada en el desarrollo profesional de proyectos Minecraft, enfocada en la creación y administración de servidores, branding visual, eventos personalizados y sistemas avanzados para comunidades y creadores de contenido.
+</p>
+
+</div>
+
+<br><br>
+
+<div class="services-grid">
+
+<div class="service-card">
+<i class="fa-solid fa-server"></i>
+<h3>Desarrollo de servidores Minecraft</h3>
+</div>
+
+<div class="service-card">
+<i class="fa-solid fa-gears"></i>
+<h3>Configuración avanzada</h3>
+</div>
+
+<div class="service-card">
+<i class="fa-solid fa-palette"></i>
+<h3>Branding y diseño</h3>
+</div>
+
+<div class="service-card">
+<i class="fa-solid fa-calendar"></i>
+<h3>Eventos personalizados</h3>
+</div>
+
+<div class="service-card">
+<i class="fa-solid fa-code"></i>
+<h3>Sistemas avanzados</h3>
+</div>
+
+<div class="service-card">
+<i class="fa-solid fa-network-wired"></i>
+<h3>Infraestructura</h3>
+</div>
+
+<div class="service-card">
+<i class="fa-solid fa-gauge-high"></i>
+<h3>Optimización y rendimiento</h3>
+</div>
+
+</div>
+
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+<h2 class="section-title">
+PROYECTOS DE <span>LMC STUDIOS ™</span>
+</h2>
+
+<div class="projects-grid">
+
+<div class="project-card">
+<img src="assets/avatars/zanfrixz.png">
+<h3>ZanFirxz</h3>
+<p>Proyecto oficial de la comunidad TEAM LMC.</p>
+</div>
+
+<div class="project-card">
+<img src="assets/avatars/sm.png">
+<h3>SumixCraft</h3>
+<p>Servidor y comunidad Minecraft.</p>
+</div>
+
+<div class="project-card">
+<img src="assets/avatars/oshanzumi.png">
+<h3>OshanZumi</h3>
+<p>Proyecto colaborativo creativo.</p>
+</div>
+
+<div class="project-card">
+<img src="assets/avatars/logo2he.png">
+<h3>Hardcore Of Elite</h3>
+<p>Experiencia survival extrema.</p>
+</div>
+
+<div class="project-card">
+<img src="assets/avatars/a (1).png">
+<h3>EXODO SMP</h3>
+<p>Servidor SMP cinematográfico.</p>
+</div>
+
+<div class="project-card">
+<img src="assets/avatars/TEAM LMC NEW - 2026.png">
+<h3>Team LMCraft Roleplay</h3>
+<p>Roleplay premium basado en comunidad.</p>
+</div>
+
+<div class="project-card">
+<img src="assets/avatars/logo.png">
+<h3>LMC Proyect</h3>
+<p>Proyecto avanzado de desarrollo.</p>
+</div>
+
+<div class="project-card">
+<img src="assets/avatars/image-removebg-preview_4.png">
+<h3>SKYBLOCK DE LOS PANAS</h3>
+<p>Modo skyblock personalizado.</p>
+</div>
+
+<div class="project-card">
+<img src="assets/avatars/COMISION_ANDREUS_WASA.png">
+<h3>DeadLands SMP</h3>
+<p>Supervivencia apocalíptica.</p>
+</div>
+
+<div class="project-card">
+<img src="assets/avatars/pedaafio2026.png">
+<h3>PEDSAFIO</h3>
+<p>Evento extremo de desafíos.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- SPONSORS -->
+
+<section>
+
+<h2 class="sponsors">
+SPON<span>SORS</span>
+</h2>
+
+<div class="sponsors">
+
+<div class="sponsor-card">
+<h3>Risinx Tweaks</h3>
+<img src="assets/avatars/rinsx.png">
+<br>
+<p>Código:</p>
+<h2 style="color:#ff2d2d;">TEAMLMC</h2>
+</div>
+
+<div class="sponsor-card">
+<h3>1XBET</h3>
+<img src="assets/avatars/1x2.png">
+<br>
+<p>Código:</p>
+<h2 style="color:#ff2d2d;">1X_4385294</h2>
+</div>
+
+</div>
+
+</section>
+
+<!-- JOIN -->
+
+<section id="join">
+
+<h2 class="section-title">
+CÓMO <span>UNIRTE</span>
+</h2>
+
+<div class="glass join-box">
+
+<p>
+El Team LMC ™ (Los Masacotes) es un grupo de amigos que disfruta jugar videojuegos y crear contenido juntos. No somos un equipo competitivo; lo más importante es la unión, el respeto y la convivencia entre los integrantes.
+<br><br>
+Unirte no depende solo de qué tan bien juegues, sino de que encajes con el grupo y compartas la misma energía.
+<br><br>
+Si crees cumplir con esto, únete al Discord, habla con @Zansumi o @zFrixz y entra a las llamadas para conocerte mejor y ver si puedes formar parte.
+</p>
+
+<div class="requirements">
+
+<h3>Requisitos obligatorios:</h3>
+
+<ul>
+<li>+15 años</li>
+<li>Llenar formulario corto vía Discord</li>
+<li>Leer los acuerdos y lineamientos</li>
+</ul>
+
+</div>
+
+<a href="https://discord.gg/Ry5zk9WEhN"
+target="_blank"
+class="join-btn">
+UNIRME AL DISCORD
+</a>
+
+</div>
+
+</section>
+
+<!-- LINEAMIENTOS -->
+
+<section>
+
+<h2 class="section-title">
+ACUERDOS <span>Y LINEAMIENTOS</span>
+</h2>
+
+<div class="accordion">
+
+<div class="accordion-item">
+<div class="accordion-header">
+1 - OBJETIVO DEL DOCUMENTO
+</div>
+<div class="accordion-content">
+Este documento tiene como finalidad aclarar los objetivos, lineamientos y buenas prácticas que se esperan de los integrantes oficiales de Team LMC.
+</div>
+</div>
+
+<div class="accordion-item">
+<div class="accordion-header">
+2 - RELACIÓN CON TEAM LMC
+</div>
+<div class="accordion-content">
+La relación entre los integrantes y Team LMC es independiente y colaborativa.
+</div>
+</div>
+
+<div class="accordion-item">
+<div class="accordion-header">
+3 - PROPIEDAD DE LOS PROYECTOS
+</div>
+<div class="accordion-content">
+Los proyectos, contenidos, ideas, diseños y desarrollos generados dentro de Team LMC se consideran parte del ecosistema del team.
+</div>
+</div>
+
+<div class="accordion-item">
+<div class="accordion-header">
+4 - USO DE IMAGEN Y RECONOCIMIENTO
+</div>
+<div class="accordion-content">
+Los integrantes pueden ser mencionados o reconocidos públicamente en proyectos, redes sociales o canales de Team LMC.
+</div>
+</div>
+
+<div class="accordion-item">
+<div class="accordion-header">
+5 - IDENTIDAD Y RECONOCIMIENTO
+</div>
+<div class="accordion-content">
+El Integrante podrá utilizar prefijos oficiales de Team LMC como reconocimiento de autoría.
+</div>
+</div>
+
+<div class="accordion-item">
+<div class="accordion-header">
+6 - PREFIJOS Y SUBEQUIPOS
+</div>
+<div class="accordion-content">
+El Integrante puede crear, administrar o formar parte de su propio team, grupo o clan utilizando el prefijo ᴸᴹᶜ.
+</div>
+</div>
+
+<div class="accordion-item">
+<div class="accordion-header">
+7 - CONFIDENCIALIDAD Y RESPETO
+</div>
+<div class="accordion-content">
+Se espera que los integrantes respeten la información interna y los proyectos del team.
+</div>
+</div>
+
+<div class="accordion-item">
+<div class="accordion-header">
+8 - PRINCIPIOS DE COLABORACIÓN
+</div>
+<div class="accordion-content">
+Los integrantes deben actuar con profesionalismo, respeto y responsabilidad.
+</div>
+</div>
+
+<div class="accordion-item">
+<div class="accordion-header">
+9 - ACEPTACIÓN Y COMPROMISO
+</div>
+<div class="accordion-content">
+Al formar parte de Team LMC, el integrante reconoce y acepta los lineamientos establecidos.
+</div>
+</div>
+
+<div class="accordion-item">
+<div class="accordion-header">
+10 - APOYO VOLUNTARIO A PATROCINADORES
+</div>
+<div class="accordion-content">
+Los integrantes podrán apoyar voluntariamente la promoción de patrocinadores oficiales de Team LMC.
+</div>
+</div>
+
+</div>
+
+<br><br>
+
+<h3 style="text-align:center;color:#ff2d2d;">
+ATT – Team LMC Management ™ - actualizado el 12 de marzo de 2026
+</h3>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<h2>
+Powered by LMC STUDIOS ™
+</h2>
+
+<p>
+Desarrollado por LMC Studios ™
+
+Todos los derechos reservados ™ 2026
+
+Team LMC ™
+Matriz de LMC Studios™, responsable de la gestión estratégica, administración y supervisión de todos sus proyectos y servicios, garantizando calidad y organización en cada desarrollo.
+
+Para cualquier duda o información adicional, puedes contactar a Team LMC Management, donde recibirás el soporte necesario..
+</p>
+
+</footer>
+
+<!-- TOP BUTTON -->
+
+<div class="top-btn" id="topBtn">
+<i class="fa-solid fa-arrow-up"></i>
+</div>
+
+<script>
+
+/* PARTICLES */
+
+const particles = document.querySelector('.particles');
+
+for(let i=0;i<80;i++){
+
+const particle = document.createElement('div');
+
+particle.classList.add('particle');
+
+particle.style.left = Math.random()*100+'%';
+
+particle.style.animationDuration =
+(5 + Math.random()*10)+'s';
+
+particle.style.opacity =
+Math.random();
+
+particle.style.width =
+particle.style.height =
+Math.random()*4+'px';
+
+particles.appendChild(particle);
+
+}
+
+/* ACCORDION */
+
+const accordionItems =
+document.querySelectorAll('.accordion-item');
+
+accordionItems.forEach(item=>{
+
+item.querySelector('.accordion-header')
+.addEventListener('click',()=>{
+
+item.classList.toggle('active');
+
+});
+
+});
+
+/* TOP BUTTON */
+
+const topBtn =
+document.getElementById('topBtn');
+
+topBtn.addEventListener('click',()=>{
+
+window.scrollTo({
+top:0,
+behavior:'smooth'
+});
+
+});
+
+/* SCROLL ANIMATION */
+
+const observer =
+new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.style.opacity = 1;
+entry.target.style.transform = "translateY(0px)";
+
+}
+
+});
+
+});
+
+document.querySelectorAll('section').forEach(sec=>{
+
+sec.style.opacity = 0;
+sec.style.transform = "translateY(80px)";
+sec.style.transition = ".8s";
+
+observer.observe(sec);
+
+});
+
+</script>
+
+</body>
+</html>
